@@ -1,0 +1,26 @@
+
+{
+  "name": "FirecrackerDev",
+  "build": {
+    "dockerfile": "../tools/devctr/Dockerfile.x86_64",
+    "context": "..",
+    "args": {
+      "FIRECRACKER_SRC_DIR": "/workspaces/firecracker",
+      "TMP_POETRY_DIR": "/tmp/poetry",
+      "POETRY_LOCK_PATH": "tools/devctr/poetry.lock"
+    }
+  },
+
+  "settings": {
+    // VS Code don't watch files under ./build
+    "files.watcherExclude": {
+      "**/build/**": true
+    }
+  },
+
+  "extensions": [
+    "matklad.rust-analyzer"
+  ],
+
+  "remoteUser": "vscode"
+}
